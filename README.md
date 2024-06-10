@@ -57,5 +57,4 @@ To translate "Hello" to French, select "French" from the dropdown, enter "Hello"
 ## Acknowledgments
 This project uses LSTM-based Seq2Seq models for translation, leveraging TensorFlow and scikit-learn libraries.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
