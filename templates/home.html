@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translation</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 20px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        select, textarea, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #000000; /* Green */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #000000;
+        }
+        .translation-box {
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Language Translation</h1>
+    <form action="/translate" method="post">
+        <label for="lang">Select Language:</label>
+        <select name="lang" id="lang">
+            <option value="tamil">English to Tamil</option>
+            <option value="french">English to French</option>
+            <option value="spanish">English to Spanish</option>
+        </select><br><br>
+        <textarea name="text" rows="4" cols="50" placeholder="Enter text to translate"></textarea><br><br>
+        <input type="submit" value="Translate">
+        <div class="translation-box">
+            {% if translation %}
+                <h2>Translation:</h2>
+                <p>{{ translation }}</p>
+            {% endif %}
+        </div>
+    </form>
+</body>
+</html>
+
+
